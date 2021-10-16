@@ -1,6 +1,24 @@
 "use strict";
 
-import data from "./urls.json" assert { type: "json" };
+let data = {};
+
+fetch("./urls.json")
+  .then((response) => {
+    if (response.status !== 200) {
+      console.error(
+        "Looks like there was a problem. Status Code: " + response.status
+      );
+      return;
+    }
+    // Examine the text in the response
+    response.json().then((d) => {
+      data = d;
+    });
+  })
+  .catch((err) => {
+    console.error("Fetch Error :-S", err);
+  });
+
 let urls = data.urls;
 
 function* generateUrls() {
