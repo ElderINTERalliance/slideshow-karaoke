@@ -14,6 +14,7 @@ function* generateUrls() {
     // remove it from the list
     urls = urls.filter((url) => url !== randChoice);
     // if we have used all the urls, reset the list
+    console.debug(randChoice);
     yield randChoice;
   }
 }
@@ -22,7 +23,7 @@ class SlideShow {
   constructor() {
     // slides is a list of URLs
     this.slides = [];
-    this.position = 0;
+    this.position = -1; // this will be immediately incremented
     this.PRELOAD_LIMIT = 5;
   }
   // asynchronous image preload
