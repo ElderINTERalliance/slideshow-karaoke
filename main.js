@@ -18,15 +18,54 @@ function* generateUrls() {
   }
 }
 
-for (let i = 0; i < 30; i++) {
-  console.log(generateUrls().next().value);
+class SlideShow {
+  constructor() {
+    // slides is a list of URLs
+    this.slides = [];
+    this.position = 0;
+    this.PRELOAD_LIMIT = 5;
+  }
+  // asynchronous image preload
+  _preloadImage(url) {
+    (async () => {
+      var img = new Image();
+      img.src = url;
+    })();
+  }
+  _update() {
+    // make sure we always have 5 preloaded slides ready
+    while (this.position > this.slides.length - this.PRELOAD_LIMIT) {
+      let url = generateUrls().next().value;
+      this._preloadImage(url);
+      this.slides.push(url);
+    }
+  }
+  next() {
+    console.log(this);
+    this._update();
+    this.position++;
+    this._setImageToCurrentPosition();
+  }
+  last() {
+    this._update();
+    this.position--;
+    this._setImageToCurrentPosition();
+  }
+  _setImageToCurrentPosition(url) {
+    const display = document.getElementById("game-display");
+    display.src = this.slides[this.position];
+  }
 }
 
-function setNewRandomImage() {
-  const img = document.getElementById("game-display");
-  img.src = generateUrls().next().value;
-}
+const presentation = new SlideShow();
 
-setNewRandomImage();
+// note the anonymous function is necessary to maintain the global scope
+document
+  .getElementById("next")
+  .addEventListener("click", () => presentation.next());
+document
+  .getElementById("last")
+  .addEventListener("click", () => presentation.last());
 
-document.getElementById("next").addEventListener("click", setNewRandomImage);
+// set initial picture
+presentation.next();
