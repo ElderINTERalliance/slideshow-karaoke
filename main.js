@@ -41,14 +41,13 @@ class SlideShow {
     }
   }
   next() {
-    console.log(this);
-    this._update();
     this.position++;
+    this._update();
     this._setImageToCurrentPosition();
   }
   last() {
-    this._update();
     this.position--;
+    this._update();
     this._setImageToCurrentPosition();
   }
   _setImageToCurrentPosition(url) {
