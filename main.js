@@ -1,15 +1,24 @@
 "use strict";
 
 import data from "./urls.json" assert { type: "json" };
-const urls = data.urls;
+let urls = data.urls;
 
 function* generateUrls() {
     while (true) {
+        if (urls.length == 0) {
+            urls = data.urls;
+            console.debug("reset")
+        }
         // select a random url
-        yield urls[Math.floor(Math.random() * urls.length)];
+        let randChoice = urls[Math.floor(Math.random() * urls.length)];
+        // remove it from the list
+        urls = urls.filter(url => url !== randChoice);
+        // if we have used all the urls, reset the list
+        yield randChoice;
     }
 }
 
-console.log(generateUrls().next().value)
-console.log(generateUrls().next().value)
-console.log(generateUrls().next().value)
+
+for (let i = 0; i < 30; i++) {
+    console.log(generateUrls().next().value)
+}
