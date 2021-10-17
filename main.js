@@ -1,5 +1,7 @@
 "use strict";
 
+let urls = [];
+
 function* generateUrls() {
   while (true) {
     if (urls.length == 0) {
@@ -64,7 +66,7 @@ class SlideShow {
   }
   const data = await response.json();
 
-  let urls = data.urls;
+  urls = data.urls;
   console.debug(data);
   console.debug(urls);
 
