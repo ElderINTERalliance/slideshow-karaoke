@@ -1,4 +1,5 @@
 "use strict";
+debugger;
 
 class SlideShow {
   constructor(SETTINGS, data) {
@@ -40,6 +41,11 @@ class SlideShow {
         // remember this.position is zero-indexed
         return this.position >= this.LIMIT.amount;
 
+      // the game will be ended by a timer, and slides are infinite
+      case "minutes":
+        return false;
+
+      // no other types are supported
       default:
         return true;
     }
@@ -73,7 +79,8 @@ class SlideShow {
 
 // Note that a const binding != const values
 const settings = {
-  ALLOWED_TYPES: ["slides"],
+  ALLOWED_TYPES: ["slides", "minutes"],
+  // note that limit needs to be an object in order to avoid being passed by value
   limit: {
     type: "slides",
     amount: 10,
@@ -82,6 +89,37 @@ const settings = {
 
 function showInputError(message) {
   document.getElementById("input-error-message").textContent = message;
+}
+
+function showProgress(text) {
+  document.getElementById("progress").textContent = text;
+}
+
+function startTimer(endTime /* as a Date */) {
+  console.log(endTime);
+  var x = setInterval(function () {
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = endTime.getTime() - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    showProgress(minutes + "m " + seconds + "s ");
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      showProgress("TIME'S UP");
+    }
+  }, 900);
+}
+
+function milliseconds(min, sec = 0) {
+  return (min * 60 + sec) * 1000;
 }
 
 // state management
@@ -101,6 +139,12 @@ function startGame() {
 
   settings.limit.amount = parseInt(amount);
   settings.limit.type = type;
+
+  // end game in a few minutes
+  if (type === "minutes") {
+    setTimeout(() => endGame(), milliseconds(settings.limit.amount));
+    startTimer(new Date(Date.now() + milliseconds(settings.limit.amount)));
+  }
 
   // show the user the game
   document.getElementById("start-screen").style.display = "none";
