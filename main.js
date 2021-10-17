@@ -60,6 +60,9 @@ class SlideShow {
     if (this._shouldEndGame()) {
       endGame();
     }
+    if (this.LIMIT.type === "slides") {
+      showProgress(`${this.position + 1} / ${this.LIMIT.amount}`);
+    }
   }
   _setImageToCurrentPosition(url) {
     const display = document.getElementById("game-display");
@@ -83,7 +86,7 @@ const settings = {
   // note that limit needs to be an object in order to avoid being passed by value
   limit: {
     type: "slides",
-    amount: 10,
+    amount: 15,
   },
 };
 
@@ -142,18 +145,21 @@ function startGame() {
 
   // end game in a few minutes
   if (type === "minutes") {
+    showProgress(`${settings.limit.amount} m 00s`);
     startTimer(new Date(Date.now() + milliseconds(settings.limit.amount)));
   }
 
   // show the user the game
   document.getElementById("start-screen").style.display = "none";
   document.getElementById("end-screen").style.display = "none";
+  document.getElementById("progress").style.display = "block";
   document.getElementById("game-window").style.display = "flex";
 }
 
 function endGame() {
   document.getElementById("start-screen").style.display = "none";
   document.getElementById("game-window").style.display = "none";
+  document.getElementById("progress").style.display = "none";
   document.getElementById("end-screen").style.display = "block";
 }
 

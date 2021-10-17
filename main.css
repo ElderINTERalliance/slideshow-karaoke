@@ -32,6 +32,10 @@ body {
   display: none;
 }
 
+#progress {
+  display: none;
+}
+
 #game-display {
   width: 100%;
   height: 100%;
