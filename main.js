@@ -96,7 +96,6 @@ function showProgress(text) {
 }
 
 function startTimer(endTime /* as a Date */) {
-  console.log(endTime);
   var x = setInterval(function () {
     // Get today's date and time
     var now = new Date().getTime();
@@ -114,6 +113,7 @@ function startTimer(endTime /* as a Date */) {
     if (distance < 0) {
       clearInterval(x);
       showProgress("TIME'S UP");
+      endGame();
     }
   }, 900);
 }
@@ -142,7 +142,6 @@ function startGame() {
 
   // end game in a few minutes
   if (type === "minutes") {
-    setTimeout(() => endGame(), milliseconds(settings.limit.amount));
     startTimer(new Date(Date.now() + milliseconds(settings.limit.amount)));
   }
 
