@@ -38,6 +38,10 @@ class SlideShow {
       this.slides.push(url);
     }
   }
+  _setImageToCurrentPosition(url) {
+    const display = document.getElementById("game-display");
+    display.src = this.slides[this.position];
+  }
   next() {
     this.position++;
     this._update();
@@ -47,10 +51,6 @@ class SlideShow {
     this.position--;
     this._update();
     this._setImageToCurrentPosition();
-  }
-  _setImageToCurrentPosition(url) {
-    const display = document.getElementById("game-display");
-    display.src = this.slides[this.position];
   }
 }
 
