@@ -97,6 +97,7 @@ function startGame() {
     showInputError("Please choose an allowed type");
     return;
   }
+  showInputError(""); // clear errors
 
   settings.limit.amount = parseInt(amount);
   settings.limit.type = type;
@@ -126,13 +127,14 @@ document.getElementById("start-button").addEventListener("click", startGame);
   }
   const data = await response.json();
 
+  // TODO: remove
   let urls = data.urls;
   console.log(data);
   console.log(urls);
 
   const presentation = new SlideShow(settings, data);
 
-  // note the anonymous function is necessary to maintain the global scope
+  // note the anonymous function is necessary to maintain the proper this context
   document
     .getElementById("next")
     .addEventListener("click", () => presentation.next());
