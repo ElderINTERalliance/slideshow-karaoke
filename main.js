@@ -1,5 +1,76 @@
 "use strict";
 
+class SlideShow {
+  constructor(SETTINGS, data) {
+    this.LIMIT = SETTINGS.limit;
+    // slides is a list of URLs
+    this.slides = [];
+    this.position = -1; // this will be immediately incremented
+    this.PRELOAD_LIMIT = 5;
+    this.data = data;
+    this.urls = data.urls;
+  }
+  // generator function - generates elements for a randomized array of urls
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*
+  *generateUrls() {
+    while (true) {
+      if (this.urls.length == 0) {
+        this.urls = this.data.urls;
+        console.debug("reset");
+      }
+      // select a random url
+      let randChoice = this.urls[Math.floor(Math.random() * this.urls.length)];
+      // remove it from the list
+      this.urls = this.urls.filter((url) => url !== randChoice);
+      // if we have used all the urls, reset the list
+      console.debug(randChoice);
+      yield randChoice;
+    }
+  }
+  // asynchronous image preload
+  _preloadImage(url) {
+    (async () => {
+      var img = new Image();
+      img.src = url;
+    })();
+  }
+  _shouldEndGame() {
+    switch (this.LIMIT.type) {
+      case "slides":
+        // remember this.position is zero-indexed
+        return this.position >= this.LIMIT.amount;
+
+      default:
+        return true;
+    }
+  }
+  _update() {
+    // make sure we always have 5 preloaded slides ready
+    while (this.position > this.slides.length - this.PRELOAD_LIMIT) {
+      let url = this.generateUrls().next().value;
+      this._preloadImage(url);
+      this.slides.push(url);
+    }
+    if (this._shouldEndGame()) {
+      endGame();
+    }
+  }
+  _setImageToCurrentPosition(url) {
+    const display = document.getElementById("game-display");
+    display.src = this.slides[this.position];
+  }
+  next() {
+    this.position++;
+    this._update();
+    this._setImageToCurrentPosition();
+  }
+  last() {
+    this.position--;
+    this._update();
+    this._setImageToCurrentPosition();
+  }
+}
+
 // Note that a const binding != const values
 const settings = {
   ALLOWED_TYPES: ["slides"],
@@ -59,75 +130,7 @@ document.getElementById("start-button").addEventListener("click", startGame);
   console.log(data);
   console.log(urls);
 
-  function* generateUrls() {
-    while (true) {
-      if (urls.length == 0) {
-        urls = data.urls;
-        console.debug("reset");
-      }
-      // select a random url
-      let randChoice = urls[Math.floor(Math.random() * urls.length)];
-      // remove it from the list
-      urls = urls.filter((url) => url !== randChoice);
-      // if we have used all the urls, reset the list
-      console.debug(randChoice);
-      yield randChoice;
-    }
-  }
-
-  class SlideShow {
-    constructor(SETTINGS) {
-      this.LIMIT = SETTINGS.limit;
-      // slides is a list of URLs
-      this.slides = [];
-      this.position = -1; // this will be immediately incremented
-      this.PRELOAD_LIMIT = 5;
-    }
-    // asynchronous image preload
-    _preloadImage(url) {
-      (async () => {
-        var img = new Image();
-        img.src = url;
-      })();
-    }
-    _shouldEndGame() {
-      switch (this.LIMIT.type) {
-        case "slides":
-          // remember this.position is zero-indexed
-          return this.position >= this.LIMIT.amount;
-
-        default:
-          return true;
-      }
-    }
-    _update() {
-      // make sure we always have 5 preloaded slides ready
-      while (this.position > this.slides.length - this.PRELOAD_LIMIT) {
-        let url = generateUrls().next().value;
-        this._preloadImage(url);
-        this.slides.push(url);
-      }
-      if (this._shouldEndGame()) {
-        endGame();
-      }
-    }
-    _setImageToCurrentPosition(url) {
-      const display = document.getElementById("game-display");
-      display.src = this.slides[this.position];
-    }
-    next() {
-      this.position++;
-      this._update();
-      this._setImageToCurrentPosition();
-    }
-    last() {
-      this.position--;
-      this._update();
-      this._setImageToCurrentPosition();
-    }
-  }
-
-  const presentation = new SlideShow(settings);
+  const presentation = new SlideShow(settings, data);
 
   // note the anonymous function is necessary to maintain the global scope
   document
