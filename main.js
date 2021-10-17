@@ -77,7 +77,7 @@ document.getElementById("start-button").addEventListener("click", startGame);
 
   class SlideShow {
     constructor(SETTINGS) {
-      this.SETTINGS = SETTINGS;
+      this.LIMIT = SETTINGS.limit;
       // slides is a list of URLs
       this.slides = [];
       this.position = -1; // this will be immediately incremented
@@ -91,10 +91,10 @@ document.getElementById("start-button").addEventListener("click", startGame);
       })();
     }
     _shouldEndGame() {
-      switch (this.SETTINGS.limit.type) {
+      switch (this.LIMIT.type) {
         case "slides":
           // remember this.position is zero-indexed
-          return this.position >= this.SETTINGS.limit.amount;
+          return this.position >= this.LIMIT.amount;
 
         default:
           return true;
