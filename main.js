@@ -63,7 +63,7 @@ class SlideShow {
       showProgress(`${this.position + 1} / ${this.LIMIT.amount}`);
     }
   }
-  _setImageToCurrentPosition(url) {
+  _setImageToCurrentPosition() {
     const display = document.getElementById("game-display");
     display.src = this.slides[this.position];
   }
@@ -146,7 +146,7 @@ function startGame() {
   if (type === "minutes") {
     showProgress(`${settings.limit.amount} m 00s`);
     startTimer(new Date(Date.now() + milliseconds(settings.limit.amount)));
-  } else if (type == "slides") {
+  } else if (type === "slides") {
     showProgress(`1 / ${settings.limit.amount}`);
   }
 
