@@ -146,6 +146,8 @@ function startGame() {
   if (type === "minutes") {
     showProgress(`${settings.limit.amount} m 00s`);
     startTimer(new Date(Date.now() + milliseconds(settings.limit.amount)));
+  } else if (type == "slides") {
+    showProgress(`1 / ${settings.limit.amount}`);
   }
 
   // show the user the game
