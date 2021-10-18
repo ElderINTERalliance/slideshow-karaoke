@@ -1,5 +1,4 @@
 "use strict";
-debugger;
 
 class SlideShow {
   constructor(SETTINGS, data) {
