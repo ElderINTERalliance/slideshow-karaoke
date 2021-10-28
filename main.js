@@ -164,7 +164,6 @@ function endGame() {
 
 function hideElementIds(...ids) {
   for (const id of ids) {
-    console.log("hidden ", id);
     styleElement(id, "none");
   }
 }
@@ -181,8 +180,6 @@ function styleElement(id, style) {
   }
 }
 
-//document.getElementById("start-button").addEventListener("click", startGame);
-
 // game logic
 // loadSlideshow is a bodge - Go back and fix later
 function loadSlideshow() {
@@ -198,8 +195,8 @@ function loadSlideshow() {
 
     // TODO: remove
     let urls = data.urls;
-    console.log(data);
-    console.log(urls);
+    console.debug(data);
+    console.debug(urls);
 
     const presentation = new SlideShow(settings, data);
     console.log("Loaded slideshow");
