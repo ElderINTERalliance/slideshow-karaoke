@@ -105,7 +105,7 @@ function startTimer(endTime /* as a Date */) {
     // Find the distance between now and the count down date
     var distance = endTime.getTime() - now;
 
-    // Time calculations for days, hours, minutes and seconds
+    // TODO: Fix when distance >= 60min
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
@@ -126,6 +126,7 @@ function milliseconds(min, sec = 0) {
 
 // state management
 function startGame() {
+  loadSlideshow();
   const type = document.getElementById("limit-type").value;
   const amount = document.getElementById("amount").value;
 
@@ -142,8 +143,8 @@ function startGame() {
   settings.limit.amount = parseInt(amount);
   settings.limit.type = type;
 
-  // end game in a few minutes
   if (type === "minutes") {
+    // end game in a few minutes
     showProgress(`${settings.limit.amount} m 00s`);
     startTimer(new Date(Date.now() + milliseconds(settings.limit.amount)));
   } else if (type === "slides") {
@@ -151,47 +152,67 @@ function startGame() {
   }
 
   // show the user the game
-  document.getElementById("start-screen").style.display = "none";
-  document.getElementById("end-screen").style.display = "none";
-  document.getElementById("progress").style.display = "block";
+  hideElementIds("MainMenuContainer", "start-screen", "end-screen");
+  showElementIds("footer", "progress", "main");
   document.getElementById("game-window").style.display = "flex";
 }
 
 function endGame() {
-  document.getElementById("start-screen").style.display = "none";
-  document.getElementById("game-window").style.display = "none";
-  document.getElementById("progress").style.display = "none";
+  hideElementIds("start-screen", "game-window", "progress");
   document.getElementById("end-screen").style.display = "block";
 }
 
-document.getElementById("start-button").addEventListener("click", startGame);
+function hideElementIds(...ids) {
+  for (const id of ids) {
+    console.log("hidden ", id);
+    styleElement(id, "none");
+  }
+}
+
+function showElementIds(...ids) {
+  for (const id of ids) {
+    styleElement(id, "block");
+  }
+}
+
+function styleElement(id, style) {
+  for (const ele of document.querySelectorAll(`#${id}`)) {
+    ele.style.display = style;
+  }
+}
+
+//document.getElementById("start-button").addEventListener("click", startGame);
 
 // game logic
-(async () => {
-  const response = await fetch("./urls.json");
-  if (response.status !== 200) {
-    console.error(
-      "Looks like there was a problem. Status Code: " + response.status
-    );
-    return;
-  }
-  const data = await response.json();
+// loadSlideshow is a bodge - Go back and fix later
+function loadSlideshow() {
+  (async () => {
+    const response = await fetch("./urls.json");
+    if (response.status !== 200) {
+      console.error(
+        "Looks like there was a problem. Status Code: " + response.status
+      );
+      return;
+    }
+    const data = await response.json();
 
-  // TODO: remove
-  let urls = data.urls;
-  console.log(data);
-  console.log(urls);
+    // TODO: remove
+    let urls = data.urls;
+    console.log(data);
+    console.log(urls);
 
-  const presentation = new SlideShow(settings, data);
+    const presentation = new SlideShow(settings, data);
+    console.log("Loaded slideshow");
 
-  // note the anonymous function is necessary to maintain the proper this context
-  document
-    .getElementById("next")
-    .addEventListener("click", () => presentation.next());
-  document
-    .getElementById("last")
-    .addEventListener("click", () => presentation.last());
+    // note the anonymous function is necessary to maintain the proper this context
+    document
+      .getElementById("next")
+      .addEventListener("click", () => presentation.next());
+    document
+      .getElementById("last")
+      .addEventListener("click", () => presentation.last());
 
-  // set initial picture
-  presentation.next();
-})();
+    // set initial picture
+    presentation.next();
+  })();
+}

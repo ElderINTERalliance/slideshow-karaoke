@@ -1,0 +1,261 @@
+
+.pageneutral {
+    background: linear-gradient(274deg, #292929, #6e6e6e, #383838, #5e5e5e);
+    background-size: 800% 800%;
+    animation: neutralcolors 44s ease infinite;
+}
+
+.titleanimation {
+  position: relative;
+  animation-name: title;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.logomaxwidthone {
+  max-width: 60%;
+}
+
+.intrologo {
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    opacity: 0;
+    animation-name: fadeInUp;
+    color: white;
+    font-size: 100%;
+}
+
+.introtextin {
+    animation-delay: 1s;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    opacity: 0;
+    animation-name: fadeInUp;
+    color: white;
+    font-size: 175%;
+    font-family: 'Playfair Display', serif;
+    font-weight: normal;
+  font-style: normal;
+}
+
+.introbutton {
+    animation-delay: 2s;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    opacity: 0;
+    animation-name: fadeInUp;
+}
+
+.button1 {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  color: rgb(0, 0, 0);
+  padding: 20px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 225%;
+  margin: 4px 2px;
+  transition-duration:.5s;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-style: italic;
+  border: none;
+  height: 49px; 
+  width: 67.5px;
+  box-shadow:  10px 10px 10px #18181870,
+                     10px 10px 10px #1a1a1a67,
+                     0 0 0 #cccccc inset,
+                     0 0 0 #ffffff inset;
+}
+
+.button1:hover {
+  box-shadow:  0 0 0 #18181870,
+                     0 0 0 #1a1a1a67,
+                      10px 10px 10px #cccccc inset,
+                      -10px -10px 10px #ffffff inset;
+  text-shadow: 2px 2px 4px #1f1f1fad;
+  border: none;
+  background-color: #f8f8f8;
+}
+
+.changeWelcometwo {
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-name: fadeinoutin;
+}
+
+.playbuttonanim {
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    opacity: 1;
+    animation-name: playbuttonanim;
+    position: absolute;
+    box-shadow:  10px 10px 10px #18181870,
+                     10px 10px 10px #1a1a1a67,
+                     0 0 0 #cccccc inset,
+                     0 0 0 #ffffff inset;
+}
+
+.lightbuttonanim {
+    animation-delay: 0s;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-name: lightbuttonanim;
+    box-shadow:  10px 10px 10px #18181870,
+                     10px 10px 10px #1a1a1a67,
+                     0 0 0 #cccccc inset,
+                     0 0 0 #ffffff inset;
+    color: #000000;
+}
+
+
+.darkbuttonanim {
+    animation-delay: 0s;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-name: darkbuttonanim;
+    position: absolute;
+    text-shadow: 2px 2px 4px #c2c2c2ef;
+    box-shadow:  10px 10px 10px #18181870,
+                     10px 10px 10px #1a1a1a67,
+                     0 0 0 #2b2b2b inset,
+                     0 0 0 #363636 inset;
+    color: #ffffff;
+}
+
+.darkbuttonanim:hover {
+  box-shadow:  0 0 0 #18181870,
+                     0 0 0 #1a1a1a67,
+                      10px 10px 10px #2b2b2b inset,
+                      -10px -10px 10px #363636 inset;
+  text-shadow: 2px 2px 4px #1f1f1fad;
+  border: none;
+  background-color: #f8f8f8;
+  position: absolute;
+}
+
+.button2 {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  color: rgb(0, 0, 0);
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 225%;
+  margin: 4px 2px;
+  transition-duration:.5s;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-style: italic;
+  border: none;
+  height: 20px; 
+  width: 20px;
+  position: absolute;
+}
+
+.playbuttonanim:hover {
+  box-shadow:  0 0 0 #18181870,
+                     0 0 0 #1a1a1a67,
+                      10px 10px 10px #cccccc inset,
+                      -10px -10px 10px #ffffff inset;
+  text-shadow: 2px 2px 4px #1f1f1fad;
+  border: none;
+  background-color: #f8f8f8;
+  position: absolute;
+}
+
+.lightbuttonanim:hover {
+  box-shadow:  0 0 0 #18181870,
+                     0 0 0 #1a1a1a67,
+                      10px 10px 10px #cccccc inset,
+                      -10px -10px 10px #ffffff inset;
+  text-shadow: 2px 2px 4px #1f1f1fad;
+  border: none;
+  background-color: #f8f8f8;
+  position: absolute;
+}
+
+.dot {
+  height: 20px;
+  width: 20px;
+  background-color: rgb(21, 182, 0);
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.playcheckboxno {
+    animation-duration: .3s;
+    animation-fill-mode: both;
+    animation-name: playcheckno;
+}
+
+.playcheckboxyes {
+    animation-duration: .3s;
+    animation-fill-mode: both;
+    animation-name: playcheckyes;
+}
+
+.modecards {
+    animation-delay: 0s;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+    animation-name: modecardsanim;
+}
+
+@keyframes modecardsanim {
+    0% {
+        opacity: 0%;
+        font-size: 0%;
+    }
+    100% {
+        opacity: 100%;
+        font-size: 225%;
+    }
+}
+.CookieAskPos {
+    animation-delay: 0s;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+    animation-name: CookieAskMove;
+    top: 50%;  
+    left: 50%; 
+    position: absolute;
+    padding: 0px 0px;
+    
+}
+
+@keyframes CookieAskMove {
+    0% {
+      opacity: 0;
+      color: rgb(255, 255, 255);
+      font-size: 0%;
+      height: 0px; 
+      width: 0px;
+      text-shadow: 2px 2px 4px #1f1f1fad;
+      transform: translate(-50%, -50%);
+    }
+    50% {
+      opacity: 0;
+
+    }
+    100% {
+      opacity: 1;
+      color: rgb(255, 255, 255);
+      font-size: 105%;
+      height: 50px; 
+      width: 455px;
+      text-shadow: 2px 2px 4px #1f1f1fad;
+      position: absolute;
+      transform: translate(-43%, 535%);
+    }
+}
+

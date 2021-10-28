@@ -1,0 +1,656 @@
+/*#ff0000, #ff9400, #ffee00, #0dff00, #00ffe6, #0049ff, #8d00ff, #ff00bd*/
+
+@keyframes neutralcolors {
+    0%{background-position:5% 0%}
+    50%{background-position:96% 100%}
+    100%{background-position:5% 0%}
+}
+  
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+@keyframes title {
+  0%  {filter: drop-shadow(0px 0px 0px rgb(255, 74, 74))
+   drop-shadow(-10px 10px 0px rgb(69, 128, 255));}
+  20%  {filter: drop-shadow(-10px 10px 0px rgb(255, 74, 74))
+   drop-shadow(0px 0px 0px rgb(69, 128, 255));}
+  20.0001%  {filter: drop-shadow(0px 0px 0px rgb(236, 213, 85))
+   drop-shadow(-10px 10px 0px rgb(255, 74, 74));}
+  40%  {filter: drop-shadow(-10px 10px 0px rgb(236, 213, 85))
+   drop-shadow(0px 0px 0px rgb(255, 74, 74));}
+  40.0001%  {filter: drop-shadow(0px 0px 0px rgb(206, 131, 255))
+   drop-shadow(-10px 10px 0px rgb(236, 213, 85));}
+  60%  {filter: drop-shadow(-10px 10px 0px rgb(206, 131, 255))
+   drop-shadow(0px 0px 0px rgb(236, 213, 85));}
+  60.0001%  {filter: drop-shadow(0px 0px 0px rgb(119, 201, 116))
+   drop-shadow(-10px 10px 0px rgb(206, 131, 255));}
+  80%  {filter: drop-shadow(-10px 10px 0px rgb(119, 201, 116))
+   drop-shadow(0px 0px 0px rgb(206, 131, 255));}
+  80.0001%  {filter: drop-shadow(0px 0px 0px rgb(69, 128, 255))
+   drop-shadow(-10px 10px 0px rgb(119, 201, 116));}
+  100%  {filter: drop-shadow(-10px 10px 0px rgb(69, 128, 255))
+   drop-shadow(0px 0px 0px rgb(119, 201, 116));}
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+@keyframes fadeinoutin {
+    0% {
+        transform: translate3d(0,0px,0);
+        opacity: 1
+    }
+
+    45% {
+        transform: translate3d(0,40px,0);
+        opacity: 0
+    }
+
+    55% {
+        transform: translate3d(0,40px,0);
+        opacity: 0
+    }
+
+    100% {
+        transform: translate3d(0,0px,0);
+        opacity: 1
+    }
+}
+
+@keyframes playcheckyes {
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes playcheckno {
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes lightbuttonanim {
+    0% {
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 225%;
+        height: 49px; 
+        width: 67.5px;
+        text-shadow: 2px 2px 4px #1f1f1fad;
+        padding: 20px 50px;
+    }
+
+    /*45% {
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-50%, 700%);
+        color: rgba(0, 0, 0, 0);
+        font-size: 0%;
+        height: 20px; 
+        width: 67.5px;
+        text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+        padding: 10px 10px;
+    }*/
+
+    50% {
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-275%, 200%);
+        color: rgba(0, 0, 0, 0);
+        font-size: 0%;
+        height: 20px; 
+        width: 20px;
+        text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+        padding: 10px 10px;
+    }
+
+    100% {
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-105%, -10%);
+        color: black;
+        font-size: 150%;
+        height: 250px; 
+        width: 210px;
+        text-shadow: 2px 2px 4px #1f1f1fad;
+        padding: 10px 10px;
+    }
+}
+
+@keyframes darkbuttonanim {
+    0% {
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 225%;
+        height: 49px; 
+        width: 67.5px;
+        text-shadow: 2px 2px 4px #1f1f1fad;
+        padding: 20px 50px;
+    }
+
+    /*45% {
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-50%, 700%);
+        color: rgba(0, 0, 0, 0);
+        font-size: 0%;
+        height: 20px; 
+        width: 67.5px;
+        text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+        padding: 10px 10px;
+    }*/
+
+    50% {
+        top: 50%;  
+        left: 50%; 
+        transform: translate(175%, 200%);
+        color: rgba(0, 0, 0, 0);
+        font-size: 0%;
+        height: 20px; 
+        width: 20px;
+        text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+        padding: 10px 10px;
+    }
+
+    100% {
+        top: 50%;  
+        left: 50%; 
+        transform: translate(5%, -10%);
+        color: white;
+        font-size: 150%;
+        height: 250px; 
+        width: 210px;
+        text-shadow: 2px 2px 4px #1f1f1fad;
+        padding: 10px 10px;
+        background-color: rgb(53, 53, 53);
+    }
+}
+
+@keyframes playbuttonanim {
+    0% {
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 225%;
+        height: 49px; 
+        width: 67.5px;
+        text-shadow: 2px 2px 4px #1f1f1fad;
+        padding: 20px 50px;
+    }
+
+    /*45% {
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-50%, 700%);
+        color: rgba(0, 0, 0, 0);
+        font-size: 0%;
+        height: 20px; 
+        width: 67.5px;
+        text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+        padding: 10px 10px;
+    }*/
+
+    50% {
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-50%, 570%);
+        color: rgba(0, 0, 0, 0);
+        font-size: 0%;
+        height: 20px; 
+        width: 20px;
+        text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+        padding: 10px 10px;
+    }
+
+    100% {
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-600%, 635%);
+        color: black;
+        font-size: 0%;
+        height: 20px; 
+        width: 20px;
+        text-shadow: 2px 2px 4px #1f1f1fad;
+        padding: 10px 10px;
+    }
+}
+
+.fadeOut {
+    animation-delay: 0s;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+    animation-name: fadeoutstuff;
+}
+
+@keyframes fadeoutstuff {
+    0% {
+        opacity: 100%;
+        font-size: 225%;
+    }
+    100% {
+        opacity: 0%;
+        font-size: 0%;
+    }
+}
+
+.darkbuttonfadeOut {
+    animation-delay: 0s;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+    animation-name: darkfadeoutstuff;
+    position: absolute
+}
+
+@keyframes darkfadeoutstuff {
+    0% {
+        opacity: 100%;
+        top: 50%;  
+        left: 50%; 
+        transform: translate(5%, -10%);
+        color: white;
+        font-size: 150%;
+        height: 250px; 
+        width: 210px;
+        text-shadow: 2px 2px 4px #1f1f1fad;
+        padding: 10px 10px;
+        background-color: rgb(53, 53, 53);
+    }
+    100% {
+        opacity: 100%;
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        color: rgb(0, 0, 0);
+        font-size: 150%;
+        height: 20px; 
+        width: 20px;
+        text-shadow: 2px 2px 4px #1f1f1fad;
+        padding: 10px 10px;
+        background-color: rgb(53, 53, 53);
+    }
+}
+
+.lightbuttonfadeOut {
+    animation-delay: 0s;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+    animation-name: lightfadeoutstuff;
+    position: absolute;
+}
+
+@keyframes lightfadeoutstuff {
+    0% {
+        opacity: 100%;
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-105%, -10%);
+        color: black;
+        font-size: 150%;
+        height: 250px; 
+        width: 210px;
+        text-shadow: 2px 2px 4px #1f1f1fad;
+        padding: 10px 10px;
+    }
+    100% {
+        opacity: 100%;
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 150%;
+        height: 20px; 
+        width: 20px;
+        text-shadow: 2px 2px 4px #1f1f1fad;
+        padding: 10px 10px;
+    }
+}
+
+.playbuttonfadeOut {
+    animation-delay: 0s;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+    animation-name: playfadeoutstuff;
+    position: absolute;
+}
+
+@keyframes playfadeoutstuff {
+    0% {
+        opacity: 100%;
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-600%, 635%);
+        color: black;
+        font-size: 0%;
+        height: 20px; 
+        width: 20px;
+        text-shadow: 2px 2px 4px #1f1f1fad;
+        padding: 10px 10px;
+    }
+    100% {
+        opacity: 100%;
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 0%;
+        height: 20px; 
+        width: 20px;
+        text-shadow: 2px 2px 4px #1f1f1fad;
+        padding: 10px 10px;
+    }
+}
+
+.introtextfadeOut {
+    animation-delay: 1s;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+    animation-name: introtextfadeoutstuff;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+@keyframes introtextfadeoutstuff {
+    0% {
+        opacity: 100%;
+        text-shadow: 2px 2px 4px #000000;
+        color: white;
+        font-size: 175%;
+        font-family: 'Playfair Display', serif;
+        font-weight: normal;
+        font-style: normal;
+        text-align: center;
+    }
+    100% {
+        opacity: 0%;
+        text-shadow: 2px 2px 4px #000000;
+        color: white;
+        font-size: 0%;
+        font-family: 'Playfair Display', serif;
+        font-weight: normal;
+        font-style: normal;
+        text-align: center;
+    }
+}
+
+.expandToMainMenu {
+    animation-delay: 0s;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-name: expandmenuanim;
+    position: absolute;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    padding: 20px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 225%;
+    margin: 4px 2px;
+    transition-duration:.5s;
+    font-family: 'Playfair Display', serif;
+    font-weight: normal;
+    font-style: normal;
+    border: none;
+    height: 20px; 
+    width: 20px;
+    box-shadow:  10px 10px 10px #18181870,
+                     10px 10px 10px #1a1a1a67,
+                     0 0 0 #cccccc inset,
+                     0 0 0 #ffffff inset;
+}
+
+@keyframes expandmenuanim {
+    0% {
+        opacity: 100%;
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 0%;
+        height: 20px; 
+        width: 20px;
+        text-shadow: 2px 2px 4px #1f1f1fad;
+        padding: 10px 10px;
+    }
+    100% {
+        opacity: 100%;
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-50%, -10%);
+        color: black;
+        font-size: 0%;
+        height: 650px; 
+        width: 1400px;
+        text-shadow: 2px 2px 4px #1f1f1fad;
+        padding: 10px 10px;
+        background-color: rgba(240, 240, 240, 0.459);
+    }
+}
+
+.DarkexpandToMainMenu {
+    animation-delay: 0s;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-name: darkexpandmenuanim;
+    position: absolute;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    padding: 20px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 225%;
+    margin: 4px 2px;
+    transition-duration:.5s;
+    font-family: 'Playfair Display', serif;
+    font-weight: normal;
+    font-style: normal;
+    border: none;
+    height: 20px; 
+    width: 20px;
+    box-shadow:  10px 10px 10px #18181870,
+                     10px 10px 10px #1a1a1a67,
+                     0 0 0 #cccccc inset,
+                     0 0 0 #ffffff inset;
+}
+
+@keyframes darkexpandmenuanim {
+    0% {
+        opacity: 100%;
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 0%;
+        height: 20px; 
+        width: 20px;
+        text-shadow: 2px 2px 4px #1f1f1fad;
+        padding: 10px 10px;
+    }
+    100% {
+        opacity: 100%;
+        top: 50%;  
+        left: 50%; 
+        transform: translate(-50%, -10%);
+        color: black;
+        font-size: 0%;
+        height: 650px; 
+        width: 900px;
+        text-shadow: 2px 2px 4px #1f1f1fad;
+        padding: 10px 10px;
+        background-color: rgba(7, 7, 7, 0.315);
+    }
+}
+
+.mainMenuLogoShrink {
+    animation-delay: 0s;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-name: makelogosmaller;
+    max-width: 60%;
+}
+
+@keyframes makelogosmaller {
+  0%  {filter: drop-shadow(0px 0px 0px rgb(255, 74, 74))
+   drop-shadow(-10px 10px 0px rgb(69, 128, 255)); max-width: 60%;}
+  20%  {filter: drop-shadow(-10px 10px 0px rgb(255, 74, 74))
+   drop-shadow(0px 0px 0px rgb(69, 128, 255));}
+  20.0001%  {filter: drop-shadow(0px 0px 0px rgb(236, 213, 85))
+   drop-shadow(-10px 10px 0px rgb(255, 74, 74));}
+  40%  {filter: drop-shadow(-10px 10px 0px rgb(236, 213, 85))
+   drop-shadow(0px 0px 0px rgb(255, 74, 74));}
+  40.0001%  {filter: drop-shadow(0px 0px 0px rgb(206, 131, 255))
+   drop-shadow(-10px 10px 0px rgb(236, 213, 85));}
+  60%  {filter: drop-shadow(-10px 10px 0px rgb(206, 131, 255))
+   drop-shadow(0px 0px 0px rgb(236, 213, 85));}
+  60.0001%  {filter: drop-shadow(0px 0px 0px rgb(119, 201, 116))
+   drop-shadow(-10px 10px 0px rgb(206, 131, 255));}
+  80%  {filter: drop-shadow(-10px 10px 0px rgb(119, 201, 116))
+   drop-shadow(0px 0px 0px rgb(206, 131, 255));}
+  80.0001%  {filter: drop-shadow(0px 0px 0px rgb(69, 128, 255))
+   drop-shadow(-10px 10px 0px rgb(119, 201, 116));}
+  100%  {filter: drop-shadow(-10px 10px 0px rgb(69, 128, 255))
+   drop-shadow(0px 0px 0px rgb(119, 201, 116)); max-width: 30%;}
+}
+
+.mainMenuLogosmall {
+    animation-delay: 0s;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-name: titleanimsmall;
+    max-width: 30%;
+    animation-iteration-count: infinite;
+}
+
+@keyframes titleanimsmall {
+  0%  {filter: drop-shadow(0px 0px 0px rgb(255, 74, 74))
+   drop-shadow(-10px 10px 0px rgb(69, 128, 255)); max-width: 30% ;}
+  20%  {filter: drop-shadow(-10px 10px 0px rgb(255, 74, 74))
+   drop-shadow(0px 0px 0px rgb(69, 128, 255));}
+  20.0001%  {filter: drop-shadow(0px 0px 0px rgb(236, 213, 85))
+   drop-shadow(-10px 10px 0px rgb(255, 74, 74));}
+  40%  {filter: drop-shadow(-10px 10px 0px rgb(236, 213, 85))
+   drop-shadow(0px 0px 0px rgb(255, 74, 74));}
+  40.0001%  {filter: drop-shadow(0px 0px 0px rgb(206, 131, 255))
+   drop-shadow(-10px 10px 0px rgb(236, 213, 85));}
+  60%  {filter: drop-shadow(-10px 10px 0px rgb(206, 131, 255))
+   drop-shadow(0px 0px 0px rgb(236, 213, 85));}
+  60.0001%  {filter: drop-shadow(0px 0px 0px rgb(119, 201, 116))
+   drop-shadow(-10px 10px 0px rgb(206, 131, 255));}
+  80%  {filter: drop-shadow(-10px 10px 0px rgb(119, 201, 116))
+   drop-shadow(0px 0px 0px rgb(206, 131, 255));}
+  80.0001%  {filter: drop-shadow(0px 0px 0px rgb(69, 128, 255))
+   drop-shadow(-10px 10px 0px rgb(119, 201, 116));}
+  100%  {filter: drop-shadow(-10px 10px 0px rgb(69, 128, 255))
+   drop-shadow(0px 0px 0px rgb(119, 201, 116)); max-width: 30%;}
+}
+
+/*
+.DarkmainMenuLogosmall {
+    animation-delay: 0s;
+    animation-duration: 5s;
+    animation-fill-mode:none;
+    animation-name: Darktitleanimsmall;
+    max-width: 30%;
+    animation-iteration-count: infinite;
+    filter: invert(1);
+}
+
+@keyframes Darktitleanimsmall {
+  0%  {filter: drop-shadow(0px 0px 0px rgb(0, 181, 181))
+   drop-shadow(-10px 10px 0px rgb(186, 127, 0));}
+  20%  {filter: drop-shadow(-10px 10px 0px rgb(0, 181, 181))
+   drop-shadow(0px 0px 0px rgb(186, 127, 0));}
+  20.0001%  {filter: drop-shadow(0px 0px 0px rgb(19, 42, 170))
+   drop-shadow(-10px 10px 0px rgb(0, 181, 181));}
+  40%  {filter: drop-shadow(-10px 10px 0px rgb(19, 42, 170))
+   drop-shadow(0px 0px 0px rgb(0, 181, 181));}
+  40.0001%  {filter: drop-shadow(0px 0px 0px rgb(49, 124, 0))
+   drop-shadow(-10px 10px 0px rgb(19, 42, 170));}
+  60%  {filter: drop-shadow(-10px 10px 0px rgb(49, 124, 0))
+   drop-shadow(0px 0px 0px rgb(19, 42, 170));}
+  60.0001%  {filter: drop-shadow(0px 0px 0px rgb(136, 54, 139))
+   drop-shadow(-10px 10px 0px rgb(49, 124, 0));}
+  80%  {filter: drop-shadow(-10px 10px 0px rgb(136, 54, 139))
+   drop-shadow(0px 0px 0px rgb(49, 124, 0));}
+  80.0001%  {filter: drop-shadow(0px 0px 0px rgb(186, 127, 0))
+   drop-shadow(-10px 10px 0px rgb(136, 54, 139));}
+  100%  {filter: drop-shadow(-10px 10px 0px rgb(186, 127, 0))
+   drop-shadow(0px 0px 0px rgb(136, 54, 139));}
+}
+*/
+
+.NeutralToDarkBG{
+  background: linear-gradient(274deg, #292929, #6e6e6e, #383838, #5e5e5e);
+    background-size: 800% 800%;
+    animation: NeuToDarkAnim 2.5 ;
+}
+
+@keyframes NeuToDarkAnim {
+  from{
+    background: linear-gradient(274deg, #292929, #6e6e6e, #383838, #5e5e5e);
+    background-size: 800% 800%;
+  }
+    to{background: linear-gradient(340deg, #5a0386, #1e0b95, #870937, #510580, #0c1578, #710825);
+    background-size: 1200% 1200%; }
+}
+
+.DarkModeBG {
+    background: linear-gradient(340deg, #5a0386, #1e0b95, #870937, #510580, #0c1578, #710825);
+    background-size: 1200% 1200%;
+
+    animation: DarkModeBackground 30s ease infinite;
+}
+
+@keyframes DarkModeBackground {
+    0%{background-position:0% 5%}
+    50%{background-position:100% 80%}
+    100%{background-position:0% 5%}
+}
+
+.NeutralToLightBG{
+  background: linear-gradient(274deg, #292929, #6e6e6e, #383838, #5e5e5e);
+    background-size: 800% 800%;
+    animation: NeuToLightAnim 44s ease infinite;
+}
+
+@keyframes NeuToLightAnim {
+    30%{background-position:5% 0%}
+    100%{background-position: 0% 5%;
+    background: linear-gradient(340deg, #e70000, #e08200, #d4c600, #09af00, #00af9e, #0049ff, #8d00ff, #ff00bd);
+    background-size: 1600% 1600%;}
+}
+
+.LightModeBG {
+    background: linear-gradient(340deg, #e70000, #e08200, #d4c600, #09af00, #00af9e, #0049ff, #8d00ff, #ff00bd);
+    background-size: 1600% 1600%;
+
+    animation: LightModeBackground 27s ease infinite;
+}
+
+@keyframes LightModeBackground {
+    0%{background-position:0% 5%}
+    50%{background-position:100% 80%}
+    100%{background-position:0% 5%}
+}
