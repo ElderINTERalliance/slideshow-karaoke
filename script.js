@@ -212,18 +212,26 @@ function disappearWelcometext() {
 }
 
 function makeMenuElements(setting) {
-  let mainMenuBox = document.getElementById('MainMenuContainer')
   document.getElementById("MainMenuContainer").innerHTML = `
   <div id='InfoBox' class='mainMenuBox1'>
-  <h1 class='infoheader'>Welcome to Slideshow Karaoke!</h1>
-  <p>Slideshow Karaoke is meant to be a fun game where you make a business pitch, lecture, or just a statement off a bunch of random images!</p>
-  <p >Make it as goofy or funny as you want, it is purely up to your imagination!</p>
-  <p>But the most important thing is to have fun!</div>
-  <div id='start-screen' class='mainMenuBox2'><h2 class='infoheader'>Game Parameters</h2><br>Limit: 
-  <input type='number' id='amount' min='1' step='1' value='15' />
-  <select id='limit-type'>
-  <option selected='selected' value='slides'>Slides</option><option value='minutes'>Minutes</option>
-  </select><button id='start-button' class='start-game' onclick='startGame()'>Start!</button>
-  <div id='input-error-message'></div></div>
+    <h1 class='infoheader'>Welcome to Slideshow Karaoke!</h1>
+    <p>Slideshow Karaoke is meant to be a fun game where you make a business pitch, lecture, or just a statement off a bunch of random images!</p>
+    <p >Make it as goofy or funny as you want, it is purely up to your imagination!</p>
+    <p>But the most important thing is to have fun! 
+  </div>
+  <div id='start-screen' class='mainMenuBox2'>
+    <h2 class='infoheader'>
+      Game Parameters
+    </h2>
+    <br />
+    Limit: 
+    <input type='number' id='amount' min='1' step='1' value='15' />
+    <select id='limit-type'>
+      <option selected='selected' value='slides'>Slides </option>
+      <option value='minutes'>Minutes</option>
+    </select>
+    <button id='start-button' class='start-game' onclick='startGame()'>Start!</button>
+    <div id='input-error-message'></div>
+  </div>
   `
 }

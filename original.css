@@ -5,6 +5,11 @@ html {
   padding: 0;
 }
 
+#last {
+  background-color: rgb(133, 127, 127, 0.5);
+  width: 20px;
+}
+
 #footer {
   display: none;
   justify-content: center;
@@ -59,7 +64,9 @@ body {
 }
 
 #end-screen {
-  display: none;
+  display: none; /* will be overwritten */
+  align-items: center;
+  justify-content: center;
 }
 
 #progress {
@@ -75,9 +82,10 @@ body {
 #game-window {
   display: none;
   justify-content: center;
-  height: 59vh;
+  height: 66vh;
   text-align: center;
   padding: 20px;
+  padding-left: 0px;
 }
 
 html {

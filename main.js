@@ -73,7 +73,7 @@ class SlideShow {
     this._setImageToCurrentPosition();
   }
   last() {
-    if (position > 0) {
+    if (this.position > 0) {
       this.position--;
     }
     this._update();
@@ -156,13 +156,12 @@ function startGame() {
   // show the user the game
   hideElementIds("MainMenuContainer", "start-screen", "end-screen");
   showElementIds("progress", "main");
-  document.getElementById("game-window").style.display = "flex";
-  document.getElementById("footer").style.display = "flex";
+  showElementIdsAsFlex("game-window", "footer");
 }
 
 function endGame() {
   hideElementIds("start-screen", "game-window", "progress", "footer");
-  document.getElementById("end-screen").style.display = "block";
+  showElementIdsAsFlex("end-screen");
 }
 
 function hideElementIds(...ids) {
@@ -177,6 +176,11 @@ function showElementIds(...ids) {
   }
 }
 
+function showElementIdsAsFlex(...ids) {
+  for (const id of ids) {
+    styleElement(id, "flex");
+  }
+}
 function styleElement(id, style) {
   for (const ele of document.querySelectorAll(`#${id}`)) {
     ele.style.display = style;
@@ -206,10 +210,7 @@ function loadSlideshow() {
 
     // note the anonymous function is necessary to maintain the proper this context
     document
-      .getElementById("next")
-      .addEventListener("click", () => presentation.next());
-    document
-      .getElementById("game-window")
+      .getElementById("game-display")
       .addEventListener("click", () => presentation.next());
     document
       .getElementById("last")
