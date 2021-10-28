@@ -206,6 +206,9 @@ function loadSlideshow() {
       .getElementById("next")
       .addEventListener("click", () => presentation.next());
     document
+      .getElementById("game-window")
+      .addEventListener("click", () => presentation.next());
+    document
       .getElementById("last")
       .addEventListener("click", () => presentation.last());
 
