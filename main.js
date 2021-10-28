@@ -73,7 +73,9 @@ class SlideShow {
     this._setImageToCurrentPosition();
   }
   last() {
-    this.position--;
+    if (position > 0) {
+      this.position--;
+    }
     this._update();
     this._setImageToCurrentPosition();
   }
