@@ -1,22 +1,19 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap');
-
 body {
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    background-color: rgb(26, 26, 26);
-    margin: 0;
-    padding: 0;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  background-color: rgb(26, 26, 26);
+  margin: 0;
+  padding: 0;
 }
 
-
 #wrapper {
-	border: 0px solid #000;
-	width: 90%;
-	margin: auto auto;
-	height:100%;
+  border: 0px solid #000;
+  width: 90%;
+  margin: auto;
+  height: 153px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -27,22 +24,21 @@ body {
   vertical-align: middle;
 }
 
-.textalignleft{
+.textalignleft {
   text-align: left;
-  vertical-align:auto;
+  vertical-align: auto;
   text-indent: 20px;
 }
 
-.infoheader{
+.infoheader {
   font-weight: bold
 }
 
 .innerbutton {
   position: absolute;
-  top: 50%;  
-  left: 50%; 
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  
 }
 
 .textdropshadow {
@@ -50,7 +46,7 @@ body {
 }
 
 .nomargin {
-  margin:0;
+  margin: 0;
 }
 
 .startzerofont {
@@ -100,7 +96,7 @@ input[type=submit]:hover {
   animation: fadeInAnimation;
   animation-duration: 1s;
   border: none;
-  height: 500px; 
+  height: 500px;
   width: 300px;
   position: absolute;
 }
@@ -120,7 +116,7 @@ input[type=submit]:hover {
   animation: fadeInAnimation;
   animation-duration: 1s;
   border: none;
-  height: 540px; 
+  height: 540px;
   width: 300px;
   position: absolute;
 }
@@ -140,7 +136,7 @@ input[type=submit]:hover {
   animation: fadeInAnimation;
   animation-duration: 1s;
   border: none;
-  height: 500px; 
+  height: 500px;
   width: 300px;
   position: absolute;
 }
@@ -160,7 +156,7 @@ input[type=submit]:hover {
   animation: fadeInAnimation;
   animation-duration: 1s;
   border: none;
-  height: 500px; 
+  height: 500px;
   width: 300px;
   position: absolute;
 }

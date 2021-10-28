@@ -153,12 +153,13 @@ function startGame() {
 
   // show the user the game
   hideElementIds("MainMenuContainer", "start-screen", "end-screen");
-  showElementIds("footer", "progress", "main");
+  showElementIds("progress", "main");
   document.getElementById("game-window").style.display = "flex";
+  document.getElementById("footer").style.display = "flex";
 }
 
 function endGame() {
-  hideElementIds("start-screen", "game-window", "progress");
+  hideElementIds("start-screen", "game-window", "progress", "footer");
   document.getElementById("end-screen").style.display = "block";
 }
 
