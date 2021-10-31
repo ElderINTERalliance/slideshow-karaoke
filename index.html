@@ -2,69 +2,39 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Slideshow Karaoke!</title>
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-	<link href="main.css" rel="stylesheet" type="text/css" />
-	<link href="original.css" rel="stylesheet" type="text/css" />
-	<link href="animations.css" rel="stylesheet" type="text/css" />
-	<link href="introsequence.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Slideshow Karaoke!</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    <link href="original.css" rel="stylesheet" type="text/css" />
+    <link href="animations.css" rel="stylesheet" type="text/css" />
+    <link href="introsequence.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body class="pageneutral" id="pagebody"onload="checkCookie()">
-	<div id="wrapper">
-		<div class="middlecenter intrologo"><br>
-        <div><img src="images/logo.png" class="titleanimation logomaxwidthone" id="AnimatedLogo"></div>
-        <br><br>
-        <div id="firsttimepage">
-        <div class="introtextin textdropshadow" id="Welcometextone">Welcome to Slideshow Karaoke!</div>
-        <div class="introtextin textdropshadow" id="Welcometexttwo">Click play to begin</div>
-        <br><br><br>
-        <div class="startbutton introbutton" id="buttonbox">
-          <div class="innerbutton" id="darkbutton" onclick=""></div>
-          <div class="innerbutton button2" id="lightbutton" onclick=""></div>
-          <div class="innerbutton button1" id="playbutton" onclick="playButtonClicked()">
-            Play
-          </div>
-          <div id="cookieAsk" class="innerbutton startzerofont tooltip">Click this button to save your setting as a cookie!</div>
+<body class="pageneutral" id="pagebody" onload="checkCookie()">
+    <div id="wrapper">
+        <div class="middlecenter intrologo"><br>
+            <div><img src="images/logo.png" class="titleanimation logomaxwidthone" id="AnimatedLogo"></div>
+            <br><br>
+            <div id="firsttimepage">
+                <div class="introtextin textdropshadow" id="Welcometextone">Welcome to Slideshow Karaoke!</div>
+                <div class="introtextin textdropshadow" id="Welcometexttwo">Click play to begin</div>
+                <br><br><br>
+                <div class="startbutton introbutton" id="buttonbox">
+                    <div class="innerbutton" id="darkbutton" onclick=""></div>
+                    <div class="innerbutton button2" id="lightbutton" onclick=""></div>
+                    <div class="innerbutton button1" id="playbutton" onclick="playButtonClicked()">
+                        Play
+                    </div>
+                    <div id="cookieAsk" class="innerbutton startzerofont tooltip">Click this button to save your setting as a cookie!</div>
+                </div>
+            </div>
         </div>
-      </div>
-      </div>
-    </div>
-    <div id="main">
-      <div id="start-screen">
-        <h1>Welcome to Slideshow Karaoke!</h1>
-        Limit:
-
-        <input type="number" id="amount" min="1" step="1" value="15" />
-
-        <select id="limit-type">
-          <option selected="selected" value="slides">Slides</option>
-          <option value="minutes">Minutes</option>
-        </select>
-
-        <button id="start-button">Start!</button>
-
-        <div id="input-error-message"></div>
-      </div>
-      <div id="game-window">
-        <div id="last"> 
-        </div>
-        <img src="" id="game-display" />
-      </div>
-      <div id="end-screen">
-        <h1>The end!</h1>
-      </div>
     </div>
 
-    <div id="footer">
-      <div id="progress"></div>
-      <!-- I figure it might be worth putting
-           - forwards and backwards buttons in the bottom here.
-           -->
-    </div>
     <script src="script.js"></script>
     <script src="main.js"></script>
-  </body>
+</body>
+
 </html>
