@@ -225,8 +225,8 @@ function makeMenuElements(setting) {
       <option selected='selected' value='slides'>Slides </option>
       <option value='minutes'>Minutes</option>
     </select>
-    <button id='start-button' class='start-game' onclick='prepareGameP1()'>Start!</button>
-    <div id='input-error-message'></div>
+    <button id='start-button' class='start-game startgamebutton' onclick='prepareGameP1()'>Start!</button>
+    <div id='input-error-message'></div><br><div>Click the images to go to the next slide, and if you need to, click the white bar next to the image to go back a slide.</div>
   </div>
   `
 }
@@ -243,8 +243,10 @@ function prepareGameP1() {
 }
 
 function prepareGameP2() {
-    document.getElementById('MainMenuContainer').innerHTML = "<div class='introtextin middlecenter'><div id='main'><div id='start-screen'><h1>Welcome to Slideshow Karaoke!</h1>         Limit:          <input type='number' id='amount' min='1' step='1' value='15' />          <select id='limit-type'>           <option selected='selected' value='slides'>Slides</option>           <option value='minutes'>Minutes</option>         </select>          <button id='start-button'>Start!</button>          <div id='input-error-message'></div>       </div>       <div id='game-window'>         <div id='last'>          </div>         <img src='' id='game-display' />       </div>       <div id='end-screen'>         <h1>The end!</h1>       </div>     </div>      <div id='footer'>       <div id='progress'></div>       <!-- I figure it might be worth putting            - forwards and backwards buttons in the bottom here.            -->     </div></div>";
-    startGame();
+    const type = document.getElementById("limit-type").value;
+    const amount = document.getElementById("amount").value;
+    document.getElementById('MainMenuContainer').innerHTML = "<div class='introtextin middlecenter'><div id='main'><div id='start-screen'><h1>Welcome to Slideshow Karaoke!</h1>         Limit:          <input type='number' id='amount' min='1' step='1' value='15' />          <select id='limit-type'>           <option selected='selected' value='slides'>Slides</option>           <option value='minutes'>Minutes</option>         </select>          <button id='start-button'>Start!</button>          <div id='input-error-message'></div>       </div>       <div id='game-window'>         <div id='last'>          </div>         <img src='' id='game-display' />       </div>       <div id='end-screen'>         <h1>The end!</h1>       </div>     </div>      <div id='footer'>       <div id='progress' class='timerslidebox'></div>       <!-- I figure it might be worth putting            - forwards and backwards buttons in the bottom here.            -->     </div></div>";
+    startGame(type, amount);
 }
 
 function reopenMenu() {

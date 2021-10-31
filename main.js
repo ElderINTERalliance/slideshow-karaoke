@@ -128,10 +128,10 @@ function milliseconds(min, sec = 0) {
 }
 
 // state management
-function startGame() {
+function startGame(type, amount) {
     loadSlideshow();
-    const type = document.getElementById("limit-type").value;
-    const amount = document.getElementById("amount").value;
+    //const type = document.getElementById("limit-type").value;
+    //const amount = document.getElementById("amount").value;
 
     if (parseInt(amount) == NaN || parseInt(amount) < 1) {
         showInputError("Please enter a number amount greater than 1");
