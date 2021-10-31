@@ -243,6 +243,13 @@ function prepareGameP1() {
 }
 
 function prepareGameP2() {
-    document.getElementById('MainMenuContainer').innerHTML = "<div class='introtextin'><div id='main'><div id='start-screen'><h1>Welcome to Slideshow Karaoke!</h1>         Limit:          <input type='number' id='amount' min='1' step='1' value='15' />          <select id='limit-type'>           <option selected='selected' value='slides'>Slides</option>           <option value='minutes'>Minutes</option>         </select>          <button id='start-button'>Start!</button>          <div id='input-error-message'></div>       </div>       <div id='game-window'>         <div id='last'>          </div>         <img src='' id='game-display' />       </div>       <div id='end-screen'>         <h1>The end!</h1>       </div>     </div>      <div id='footer'>       <div id='progress'></div>       <!-- I figure it might be worth putting            - forwards and backwards buttons in the bottom here.            -->     </div></div>";
+    document.getElementById('MainMenuContainer').innerHTML = "<div class='introtextin middlecenter'><div id='main'><div id='start-screen'><h1>Welcome to Slideshow Karaoke!</h1>         Limit:          <input type='number' id='amount' min='1' step='1' value='15' />          <select id='limit-type'>           <option selected='selected' value='slides'>Slides</option>           <option value='minutes'>Minutes</option>         </select>          <button id='start-button'>Start!</button>          <div id='input-error-message'></div>       </div>       <div id='game-window'>         <div id='last'>          </div>         <img src='' id='game-display' />       </div>       <div id='end-screen'>         <h1>The end!</h1>       </div>     </div>      <div id='footer'>       <div id='progress'></div>       <!-- I figure it might be worth putting            - forwards and backwards buttons in the bottom here.            -->     </div></div>";
     startGame();
+}
+
+function reopenMenu() {
+    let elementendscreen = document.getElementById('end-screen');
+    elementendscreen.classList.remove('intrologo');
+    elementendscreen.classList.add('fadeOutOnly');
+    setTimeout(function() { makeMenuElements(); }, 1500);
 }

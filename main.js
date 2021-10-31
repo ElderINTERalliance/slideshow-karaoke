@@ -163,6 +163,10 @@ function startGame() {
 function endGame() {
     hideElementIds("start-screen", "game-window", "progress", "footer");
     showElementIdsAsFlex("end-screen");
+    //I bestow my garbage code upon yours! HUZZAH!
+    let elementendscreen = document.getElementById('end-screen');
+    elementendscreen.classList.add('intrologo');
+    setTimeout(function() { reopenMenu(); }, 1500);
 }
 
 function hideElementIds(...ids) {
